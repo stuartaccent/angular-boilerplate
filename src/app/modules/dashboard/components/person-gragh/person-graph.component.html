@@ -1,0 +1,31 @@
+<h4 class="mb-0">Controls</h4>
+<hr class="mb-4">
+<div class="inline-flex items-center space-x-4 mb-6">
+  <span>Offset</span>
+  <button appButton [options]="{style: 'white', size: 'sm'}" (click)="prevOffset()">previous</button>
+  <button appButton [options]="{style: 'white', size: 'sm'}" (click)="nextOffset()">next</button>
+  <span>Limit</span>
+  <button appButton [options]="{style: 'white', size: 'sm'}" (click)="decLimit()">decrease</button>
+  <button appButton [options]="{style: 'white', size: 'sm'}" (click)="incLimit()">increase</button>
+</div>
+
+<h4 class="mb-0">Filters</h4>
+<hr class="mb-4">
+<pre class="text-xs p-4 bg-gray-200 border rounded mb-6">{{ filters() | json }}</pre>
+
+<h4 class="mb-0">Pagination</h4>
+<hr class="mb-4">
+<pre class="text-xs p-4 bg-gray-200 border rounded mb-6">{{ pagination() | json }}</pre>
+
+<ng-container *ngIf="data()?.getAllPeople as persons">
+  <h4 class="mb-0">Counts</h4>
+  <hr class="mb-4">
+  <pre class="text-xs p-4 bg-gray-200 border rounded mb-6">items_count = {{ persons.items_count }}, total_count = {{ persons.total_count }}</pre>
+  <h4 class="mb-0">Items</h4>
+  <hr class="mb-4">
+  <pre class="text-xs p-4 bg-gray-200 border rounded mb-6">{{ persons.items | json }}</pre>
+</ng-container>
+
+<h4 class="mb-0">Info</h4>
+<hr class="mb-4">
+<pre class="text-xs p-4 bg-gray-200 border rounded mb-6">loading = {{ loading() }}, status = {{ error()?.message ?? 'ok' }}</pre>

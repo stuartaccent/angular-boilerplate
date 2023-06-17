@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { PersonGraphComponent } from '@modules/dashboard/components/person-gragh/person-graph.component';
 import { NavComponent } from '@modules/shared/components/nav/nav.component';
 
 @Component({
@@ -7,7 +8,8 @@ import { NavComponent } from '@modules/shared/components/nav/nav.component';
   standalone: true,
   imports: [
     CommonModule,
-    NavComponent
+    NavComponent,
+    PersonGraphComponent
   ],
   templateUrl: './dashboard-page.component.html'
 })
