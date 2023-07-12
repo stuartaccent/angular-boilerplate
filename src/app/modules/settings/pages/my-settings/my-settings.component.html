@@ -1,20 +1,24 @@
 <app-nav></app-nav>
-<main class="container mx-auto px-6">
+<main appTailwind="container">
   <header>
-    <h1 class="mb-0">Settings</h1>
+    <h1 appTailwind="h1">Settings</h1>
   </header>
   <div class="sm:grid sm:grid-cols-4 gap-8">
     <aside class="pt-4">
       <nav>
         <ul class="space-y-2">
           <li>
-            <a class="flex items-center" routerLink="profile" routerLinkActive="text-gray-800 font-medium">
+            <a #rla1="routerLinkActive" [appTailwind]="rla1.isActive ? 'anchor' : 'anchor.primary'"
+               class="flex items-center"
+               routerLink="profile" routerLinkActive>
               <div appSvgIcon="majestic-user-line" class="w-4 h-4 mr-2"></div>
               Profile
             </a>
           </li>
           <li>
-            <a class="flex items-center" routerLink="password" routerLinkActive="text-gray-800 font-medium">
+            <a #rla2="routerLinkActive" [appTailwind]="rla2.isActive ? 'anchor' : 'anchor.primary'"
+               class="flex items-center"
+               routerLink="password" routerLinkActive>
               <div appSvgIcon="majestic-key-line" class="w-4 h-4 mr-2"></div>
               Password
             </a>

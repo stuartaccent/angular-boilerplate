@@ -6,8 +6,7 @@ import { AuthRepository } from '@modules/auth/shared/auth.repository';
 import { AuthService } from '@modules/auth/shared/auth.service';
 import { ErrorMessagesComponent } from '@modules/shared/components/error-messages/error-messages.component';
 import { FormErrorsComponent } from '@modules/shared/components/form-errors/form-errors.component';
-import { ButtonDirective } from '@modules/shared/directives/button.directive';
-import { MessageDirective } from '@modules/shared/directives/message.directive';
+import { TailwindDirective } from '@modules/shared/directives/tailwind.directive';
 import { ErrorMessageService } from '@modules/shared/services/error-message.service';
 import { finalize, first } from 'rxjs';
 
@@ -19,8 +18,7 @@ import { finalize, first } from 'rxjs';
     ReactiveFormsModule,
     FormErrorsComponent,
     ErrorMessagesComponent,
-    ButtonDirective,
-    MessageDirective
+    TailwindDirective
   ],
   templateUrl: './email-verification-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush

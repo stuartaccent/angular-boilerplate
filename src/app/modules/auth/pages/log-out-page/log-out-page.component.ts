@@ -2,8 +2,8 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthPaths } from '@modules/auth/shared/auth-routes';
 import { AuthService } from '@modules/auth/shared/auth.service';
-import { ButtonDirective } from '@modules/shared/directives/button.directive';
 import { SvgIconDirective } from '@modules/shared/directives/svg-icon.directive';
+import { TailwindDirective } from '@modules/shared/directives/tailwind.directive';
 import { firstValueFrom } from 'rxjs';
 
 @Component({
@@ -13,7 +13,7 @@ import { firstValueFrom } from 'rxjs';
     CommonModule,
     NgOptimizedImage,
     SvgIconDirective,
-    ButtonDirective
+    TailwindDirective
   ],
   templateUrl: './log-out-page.component.html'
 })

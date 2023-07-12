@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { MessageDirective } from '@modules/shared/directives/message.directive';
+import { TailwindDirective } from '@modules/shared/directives/tailwind.directive';
 import { ErrorMessage } from '@modules/shared/interfaces/error-message';
 import { ErrorMessageService } from '@modules/shared/services/error-message.service';
 import { BehaviorSubject, filter, Observable, switchMap } from 'rxjs';
@@ -10,7 +10,7 @@ import { BehaviorSubject, filter, Observable, switchMap } from 'rxjs';
   standalone: true,
   imports: [
     CommonModule,
-    MessageDirective
+    TailwindDirective
   ],
   templateUrl: './error-messages.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush

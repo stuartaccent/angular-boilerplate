@@ -1,18 +1,18 @@
-<main class="container mx-auto px-6 mt-10 sm:mt-16 md:mt-24 lg:mt-32 xl:mt-40">
+<main appTailwind="container.topScaling">
   <header class="mb-10">
     <a href="/">
       <img alt="logo" class="mb-8 w-[300px]" height="348" ngSrc="assets/logo.png" width="1280"/>
     </a>
-    <hgroup>
-      <h1>Forgot Password</h1>
-      <h2 class="flex items-center">
+    <hgroup appTailwind="hgroup">
+      <h1 appTailwind="h1">Forgot Password</h1>
+      <h2 class="flex items-center text-gray-600">
         <div appSvgIcon="majestic-key-line" class="w-4 h-4 mr-2"></div>
         Request details to reset your password.
       </h2>
     </hgroup>
   </header>
   <section class="max-w-[500px]">
-    <div *ngIf="success()" appMessage>
+    <div *ngIf="success()" appTailwind="alert.success">
       Your password has been reset. You can now
       <a class="text-green-800 underline" href="{{ AuthPaths.logIn }}">Login</a>
       using your new password.
@@ -21,16 +21,19 @@
     <form #ngForm="ngForm" (ngSubmit)="submit()" [formGroup]="form" class="space-y-6">
       <div>
         <label for="password">Password</label>
-        <input formControlName="password" id="password" type="password">
+        <input appTailwind="input" formControlName="password" id="password" type="password">
         <app-form-errors [control]="form.controls.password" [formRef]="ngForm"></app-form-errors>
       </div>
       <div>
         <label for="password_confirm">Confirm your Password</label>
-        <input formControlName="password_confirm" id="password_confirm" type="password">
+        <input appTailwind="input" formControlName="password_confirm" id="password_confirm" type="password">
         <app-form-errors [control]="form.controls.password_confirm" [formRef]="ngForm"></app-form-errors>
       </div>
-      <button [disabled]="loading()" appButton class="w-full"
-              type="submit">Change Password
+      <button [disabled]="loading()"
+              [extra]="['w-full']"
+              appTailwind="button.primary"
+              type="submit"
+      >Change Password
       </button>
     </form>
   </section>

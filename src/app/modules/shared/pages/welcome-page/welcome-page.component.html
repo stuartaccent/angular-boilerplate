@@ -1,9 +1,9 @@
-<main class="container mx-auto px-6 mt-10 sm:mt-16 md:mt-24 lg:mt-32 xl:mt-40">
+<main appTailwind="container.topScaling">
   <header class="mb-10">
     <img alt="logo" class="mb-8 w-[300px]" height="348" ngSrc="assets/logo.png" width="1280"/>
-    <hgroup>
-      <h1>Angular Boilerplate</h1>
-      <h2 class="flex items-center">
+    <hgroup appTailwind="hgroup">
+      <h1 appTailwind="h1">Angular Boilerplate</h1>
+      <h2 class="flex items-center text-gray-600">
         <div appSvgIcon="majestic-home-line" class="w-4 h-4 mr-2"></div>
         Welcome to the angular boilerplate. Please login or register to get started.
       </h2>
@@ -11,15 +11,27 @@
   </header>
   <section>
     <div class="max-w-xl sm:grid sm:grid-cols-2 gap-4">
-      <a appButton class="w-full mb-4"
-         href="{{ AuthPaths.logIn }}">Login</a>
-      <a [options]="{ style: 'white', size: 'md' }" appButton class="w-full mb-4"
-         href="{{ AuthPaths.register }}">Register</a>
+      <a [extra]="['w-full', 'mb-4']"
+         appTailwind="button.primary"
+         href="{{ AuthPaths.logIn }}">Login
+      </a>
+      <a [extra]="['w-full', 'mb-4']"
+         appTailwind="button.white"
+         href="{{ AuthPaths.register }}">Register
+      </a>
     </div>
     <div class="mt-6 mb-2">Useful Links</div>
     <ul class="list-disc list-inside">
-      <li><a href="https://github.com/stuartaccent/angular-boilerplate">Github Repository</a></li>
-      <li><a href="https://github.com/stuartaccent/fastapi-boilerplate">FastAPI Boilerplate</a></li>
+      <li>
+        <a appTailwind="anchor.primary" href="https://github.com/stuartaccent/angular-boilerplate">
+          Github Repository
+        </a>
+      </li>
+      <li>
+        <a appTailwind="anchor.primary" href="https://github.com/stuartaccent/fastapi-boilerplate">
+          FastAPI Boilerplate
+        </a>
+      </li>
     </ul>
   </section>
 </main>

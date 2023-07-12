@@ -5,27 +5,27 @@
   <h3 class="mb-1">Profile</h3>
   <hr class="mb-6">
   <form #ngForm="ngForm" (ngSubmit)="submit()" [formGroup]="form" class="sm:col-span-2 space-y-6">
-    <div *ngIf="success()" appMessage>
+    <div *ngIf="success()" appTailwind="alert.success">
       Your profile was updated successfully.
     </div>
     <app-error-messages *ngIf="!success()" location="myProfile"></app-error-messages>
     <div>
       <label for="first_name">First Name</label>
-      <input formControlName="first_name" id="first_name" type="text">
+      <input appTailwind="input" formControlName="first_name" id="first_name" type="text">
       <app-form-errors [control]="form.controls.first_name" [formRef]="ngForm"></app-form-errors>
     </div>
     <div>
       <label for="last_name">Last Name</label>
-      <input formControlName="last_name" id="last_name" type="text">
+      <input appTailwind="input" formControlName="last_name" id="last_name" type="text">
       <app-form-errors [control]="form.controls.last_name" [formRef]="ngForm"></app-form-errors>
     </div>
     <div>
       <label for="email">Email</label>
-      <input formControlName="email" id="email" type="email">
+      <input appTailwind="input" formControlName="email" id="email" type="email">
       <app-form-errors [control]="form.controls.email" [formRef]="ngForm"></app-form-errors>
     </div>
-    <button [disabled]="loading()" appButton type="submit">Update
-      Profile
+    <button [disabled]="loading()" appTailwind="button.primary" type="submit">
+      Update Profile
     </button>
   </form>
 </section>

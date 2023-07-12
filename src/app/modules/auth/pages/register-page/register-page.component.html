@@ -1,18 +1,18 @@
-<main class="container mx-auto px-6 mt-10 sm:mt-16 md:mt-24 lg:mt-32 xl:mt-40">
+<main appTailwind="container.topScaling">
   <header>
     <a href="/">
       <img alt="logo" class="mb-8 w-[300px]" height="348" ngSrc="assets/logo.png" width="1280"/>
     </a>
-    <hgroup class="mb-10">
-      <h1>Register</h1>
-      <h2 class="flex items-center">
+    <hgroup appTailwind="hgroup" class="mb-10">
+      <h1 appTailwind="h1">Register</h1>
+      <h2 class="flex items-center text-gray-600">
         <div appSvgIcon="majestic-user-add-line" class="w-4 h-4 mr-2"></div>
         Please complete the below to create and access your account.
       </h2>
     </hgroup>
   </header>
   <section class="max-w-[500px]">
-    <div *ngIf="success(); else formBlock" appMessage>
+    <div *ngIf="success(); else formBlock" appTailwind="alert.success">
       Thank you, your registration was successful. You can now
       <a class="text-green-800 underline" href="{{ AuthPaths.logIn }}">login</a> to access the site.
     </div>
@@ -21,31 +21,35 @@
       <form #ngForm="ngForm" (ngSubmit)="register()" [formGroup]="form" class="space-y-6">
         <div>
           <label for="first_name">First Name</label>
-          <input formControlName="first_name" id="first_name" type="text">
+          <input appTailwind="input" formControlName="first_name" id="first_name" type="text">
           <app-form-errors [control]="form.controls.first_name" [formRef]="ngForm"></app-form-errors>
         </div>
         <div>
           <label for="last_name">Last Name</label>
-          <input formControlName="last_name" id="last_name" type="text">
+          <input appTailwind="input" formControlName="last_name" id="last_name" type="text">
           <app-form-errors [control]="form.controls.last_name" [formRef]="ngForm"></app-form-errors>
         </div>
         <div>
           <label for="email">Email</label>
-          <input formControlName="email" id="email" type="email">
+          <input appTailwind="input" formControlName="email" id="email" type="email">
           <app-form-errors [control]="form.controls.email" [formRef]="ngForm"></app-form-errors>
         </div>
         <div>
           <label for="password">Password</label>
-          <input formControlName="password" id="password" type="password">
+          <input appTailwind="input" formControlName="password" id="password" type="password">
           <app-form-errors [control]="form.controls.password" [formRef]="ngForm"></app-form-errors>
         </div>
         <div>
           <label for="password_confirm">Confirm your Password</label>
-          <input formControlName="password_confirm" id="password_confirm" type="password">
+          <input appTailwind="input" formControlName="password_confirm" id="password_confirm" type="password">
           <app-form-errors [control]="form.controls.password_confirm" [formRef]="ngForm"></app-form-errors>
         </div>
-        <button [disabled]="loading()" appButton class="w-full"
-                type="submit">Register
+        <button [disabled]="loading()"
+                [extra]="['w-full']"
+                appTailwind="button.primary"
+                type="submit"
+        >
+          Register
         </button>
       </form>
     </ng-template>

@@ -1,29 +1,32 @@
-<main class="container mx-auto px-6 mt-10 sm:mt-16 md:mt-24 lg:mt-32 xl:mt-40">
+<main appTailwind="container.topScaling">
   <header class="mb-10">
     <a href="/">
       <img alt="logo" class="mb-8 w-[300px]" height="348" ngSrc="assets/logo.png" width="1280"/>
     </a>
-    <hgroup>
-      <h1>Forgot Password</h1>
-      <h2 class="flex items-center">
+    <hgroup appTailwind="hgroup">
+      <h1 appTailwind="h1">Forgot Password</h1>
+      <h2 class="flex items-center text-gray-600">
         <div appSvgIcon="majestic-key-line" class="w-4 h-4 mr-2"></div>
         Request details to reset your password.
       </h2>
     </hgroup>
   </header>
   <section class="max-w-[500px]">
-    <div *ngIf="success()" appMessage>
+    <div *ngIf="success()" appTailwind="alert.success">
       Assuming the email exists in our system. We will send details of what to do next.
     </div>
     <app-error-messages *ngIf="!success()" location="forgotPw"></app-error-messages>
     <form #ngForm="ngForm" (ngSubmit)="submit()" [formGroup]="form" class="space-y-6">
       <div>
         <label for="email">Email</label>
-        <input formControlName="email" id="email" type="email">
+        <input appTailwind="input" formControlName="email" id="email" type="email">
         <app-form-errors [control]="form.controls.email" [formRef]="ngForm"></app-form-errors>
       </div>
-      <button [disabled]="loading()" appButton class="w-full"
-              type="submit">Request Details
+      <button [disabled]="loading()"
+              [extra]="['w-full']"
+              appTailwind="button.primary"
+              type="submit"
+      >Request Details
       </button>
     </form>
   </section>

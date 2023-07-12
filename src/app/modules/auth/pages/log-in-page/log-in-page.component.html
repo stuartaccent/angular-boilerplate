@@ -1,11 +1,11 @@
-<main class="container mx-auto px-6 mt-10 sm:mt-16 md:mt-24 lg:mt-32 xl:mt-40">
+<main appTailwind="container.topScaling">
   <header class="mb-10">
     <a href="/">
       <img alt="logo" class="mb-8 w-[300px]" height="348" ngSrc="assets/logo.png" width="1280"/>
     </a>
-    <hgroup>
-      <h1>Login</h1>
-      <h2 class="flex items-center">
+    <hgroup appTailwind="hgroup">
+      <h1 appTailwind="h1">Login</h1>
+      <h2 class="flex items-center text-gray-600">
         <div appSvgIcon="majestic-door-enter-line" class="w-4 h-4 mr-2"></div>
         Access your account.
       </h2>
@@ -16,19 +16,22 @@
     <form #ngForm="ngForm" (ngSubmit)="logIn()" [formGroup]="form" class="space-y-6">
       <div>
         <label for="email">Email</label>
-        <input formControlName="email" id="email" type="email">
+        <input appTailwind="input" formControlName="email" id="email" type="email">
         <app-form-errors [control]="form.controls.email" [formRef]="ngForm"></app-form-errors>
       </div>
       <div>
         <label for="password">Password</label>
-        <input formControlName="password" id="password" type="password">
+        <input appTailwind="input" formControlName="password" id="password" type="password">
         <app-form-errors [control]="form.controls.password" [formRef]="ngForm"></app-form-errors>
       </div>
       <div class="flex justify-end">
-        <a href="{{ AuthPaths.forgotPassword }}">Forgot password</a>
+        <a appTailwind="anchor.primary" href="{{ AuthPaths.forgotPassword }}">Forgot password</a>
       </div>
-      <button [disabled]="loading()" appButton class="w-full"
-              type="submit">Login
+      <button [disabled]="loading()"
+              [extra]="['w-full']"
+              appTailwind="button.primary"
+              type="submit"
+      >Login
       </button>
     </form>
   </section>

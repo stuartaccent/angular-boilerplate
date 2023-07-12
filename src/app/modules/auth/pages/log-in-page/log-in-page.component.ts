@@ -10,8 +10,8 @@ import { LoginRequest } from '@modules/auth/shared/interfaces/login-request';
 import { DashboardPaths } from '@modules/dashboard/shared/dashboard-routes';
 import { ErrorMessagesComponent } from '@modules/shared/components/error-messages/error-messages.component';
 import { FormErrorsComponent } from '@modules/shared/components/form-errors/form-errors.component';
-import { ButtonDirective } from '@modules/shared/directives/button.directive';
 import { SvgIconDirective } from '@modules/shared/directives/svg-icon.directive';
+import { TailwindDirective } from '@modules/shared/directives/tailwind.directive';
 import { ErrorMessageService } from '@modules/shared/services/error-message.service';
 import { finalize, first } from 'rxjs';
 
@@ -25,7 +25,7 @@ import { finalize, first } from 'rxjs';
     FormErrorsComponent,
     ErrorMessagesComponent,
     SvgIconDirective,
-    ButtonDirective
+    TailwindDirective
   ],
   templateUrl: './log-in-page.component.html'
 })
